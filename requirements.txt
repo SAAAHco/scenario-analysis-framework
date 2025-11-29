@@ -1,0 +1,26 @@
+# Requirements for Arctic Geopolitical Scenario Analysis
+# Python 3.11.5 recommended
+
+# Core scientific computing
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+xgboost>=2.0.0
+lightgbm>=4.0.0
+catboost>=1.2.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Document generation
+python-docx>=0.8.11
+
+# Optional: Deep Learning
+# tensorflow>=2.15.0
+
+# Installation:
+# pip install -r requirements.txt
