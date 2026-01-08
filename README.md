@@ -231,10 +231,10 @@ If you use this framework, please cite:
 ```bibtex
 @article{author2025scenario,
   title={Scenario-Based Geopolitical Analysis: A Machine Learning Framework},
-  author={[Your Name]},
-  journal={[Journal Name]},
+  author={Ashkanani},
+  journal={[Journal of Energy Policy]},
   year={2025},
-  doi={[DOI]}
+  doi={[Under Review]}
 }
 ```
 
