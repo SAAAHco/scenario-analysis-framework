@@ -233,7 +233,7 @@ If you use this framework, please cite:
   title={Scenario-Based Geopolitical Analysis: A Machine Learning Framework},
   author={Ashkanani},
   journal={[Journal of Energy Policy]},
-  year={2025},
+  year={2026},
   doi={[Under Review]}
 }
 ```
