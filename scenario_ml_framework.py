@@ -128,7 +128,10 @@ class ScenarioConfig:
     }
     
     # Monte Carlo parameters
-    MC_ITERATIONS = 10000
+    # Monte Carlo size. 1,000 reproduces the projection intervals reported in
+    # the main text (Table 2, Figure 3). The threshold and weight-stability
+    # analyses use 10,000; see README for which count belongs to which result.
+    MC_ITERATIONS = 1000
     CONFIDENCE_LEVEL = 0.95
     
     # ML parameters
@@ -545,6 +548,10 @@ class ScenarioPredictor:
         print(" TRAINING ML ENSEMBLE ")
         print("="*60)
         
+        # Boosting rounds are fixed at 200 for the three gradient-boosting
+        # members; they do not use early stopping. Only the neural network
+        # holds out an internal validation fraction (see member 6 below).
+
         # 1. XGBoost
         if XGBOOST_AVAILABLE:
             print("\n1. XGBoost...")
@@ -625,7 +632,9 @@ class ScenarioPredictor:
         et_pred = np.abs(et_pred) / np.sum(np.abs(et_pred), axis=1, keepdims=True)
         results['ExtraTrees'] = {'models': et_models, 'predictions': et_pred}
         
-        # 6. Neural Network
+        # 6. Neural Network. This is the only ensemble member that reserves an
+        # internal validation fraction (10% of the training partition) and stops
+        # early; the boosters above run a fixed 200 rounds.
         print("6. Neural Network...")
         nn_model = MLPRegressor(
             hidden_layer_sizes=(256, 128, 64, 32),

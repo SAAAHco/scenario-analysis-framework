@@ -1,4 +1,4 @@
-# Requirements for Arctic Geopolitical Scenario Analysis
+# Requirements for the Scenario-Based Geopolitical Analysis Framework
 # Python 3.11.5 recommended
 
 # Core scientific computing
@@ -19,8 +19,9 @@ seaborn>=0.12.0
 # Document generation
 python-docx>=0.8.11
 
-# Optional: Deep Learning
-# tensorflow>=2.15.0
+# Note: xgboost, lightgbm and catboost are imported behind try/except in
+# scenario_ml_framework.py. If any is unavailable the ensemble falls back to
+# scikit-learn estimators, so results will differ from those reported.
 
 # Installation:
 # pip install -r requirements.txt

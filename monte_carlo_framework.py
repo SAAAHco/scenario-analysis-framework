@@ -62,6 +62,9 @@ class MCDAConfig:
     }
     
     # Monte Carlo parameters
+    # 10,000 is used for the threshold and weight-stability analyses reported
+    # in Supplementary Section S5. The projection intervals in the main text
+    # (Table 2, Figure 3) use 1,000; see README.
     N_ITERATIONS = 10000
     RANDOM_SEED = 42
     CONFIDENCE_LEVEL = 0.95
